@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+use: ["posts"]
+---
+    <section class="latest_blog_posts">
+      <h2>Latest blog posts</h2>
+
+      <ul>
+{% for post in data.posts|slice(0, 10) %}
+        <li>{{ post.date | date("m / Y") }} <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+      </ul>
+
+      <p><a href="{{ site.url }}/blog/">Blog archive</a></p>
+    </section>
+
+    <section class="digital_footprint">
+      <h2>Digital footprint</h2>
+
+      <ul>
+        <li><a href="https://github.com/gjuric/">Github</a></li>
+        <li><a href="http://stackoverflow.com/users/181801/goran-juric">Stack Overflow</a></li>
+        <li><a href="http://www.linkedin.com/in/goranjuric">LinkedIn</a></li>
+        <li><a href="http://twitter.com/#!/goran_juric">Twitter</a></li>
+        <li><a href="http://www.facebook.com/goran.juric">Facebook</a></li>
+      </ul>
+    </section>

@@ -1,0 +1,29 @@
+---
+layout: default
+title: Home
+generator: pagination
+pagination:
+    max_per_page: 15
+use:
+    - posts
+---
+    <section class="latest_blog_posts">
+      <h2>Blog</h2>
+
+      <ul>
+{% for post in page.pagination.items %}
+        <li>{{ post.date | date("m / Y") }} <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+      </ul>
+
+{% if page.pagination.previous_page or page.pagination.next_page %}
+      <nav>
+{% if page.pagination.previous_page %}
+        <a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>
+{% endif %}
+{% if page.pagination.next_page %}
+        <a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>
+{% endif %}
+      </nav>
+{% endif %}
+    </section>

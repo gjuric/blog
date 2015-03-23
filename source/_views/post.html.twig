@@ -1,0 +1,73 @@
+{% extends "default" %}
+
+{% block head_meta %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
+{% block content_wrapper %}
+    <article itemscope itemType="http://schema.org/BlogPosting">
+      <header>
+          <h1 itemprop="headline">{{ page.title }}</h1>
+          <p>Published on <time datetime="{{ page.date | date("Y-m-d") }}" itemprop="datePublished">{{ page.date | date("M Y") }}</time></p>
+      </header>
+
+      <section itemprop="articleBody">
+<!-- Post body -->
+{{ page.blocks.content|raw }}
+<!-- /Post body -->
+      </section>
+
+{% if page.previous_post or page.next_post %}
+      <nav class="article">
+        <h3>Other posts</h3>
+        <ul>
+{% if page.next_post %}
+          <li>Next: <a class="next" href="{{ site.url }}{{ page.next_post.url }}">{{ page.next_post.title }}</a></li>
+{% endif %}
+{% if page.previous_post %}
+          <li>Previous: <a class="previous" href="{{ site.url }}{{ page.previous_post.url }}">{{ page.previous_post.title }}</a></li>
+{% endif %}
+        </ul>
+      </nav>
+{% endif %}
+
+{% if site.disqus.shortname and site.disqus.shortname != '' %}
+      <section id="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <noscript>
+          <p>Please enable JavaScript to view or post comments.</p>
+          <p>Comments are provided by 3rd party (Disqus).</p>
+        </noscript>
+      </section>
+{% endif %}
+    </article>
+{%- endblock %}
+
+{% block javascripts %}
+{% if site.disqus.shortname and site.disqus.shortname != '' %}
+    <!-- Comment loader -->
+    <script type="text/javascript">
+      var p = document.createElement('p');
+      p.appendChild(document.createTextNode("Click to load comments"));
+      p.className = "load_comments";
+      p.addEventListener('click', load_disqus);
+
+      var c = document.getElementById('disqus_thread');
+      c.appendChild(p);
+
+      function load_disqus() {
+        c.removeChild(p);
+        //p.removeEventListener('click', load_disqus);
+
+        var disqus_shortname = '{{site.disqus.shortname}}';
+
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+    </script>
+{% endif %}
+{% endblock %}

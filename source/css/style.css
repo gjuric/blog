@@ -1,0 +1,127 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/* General */
+html { 
+  padding: 1em; 
+  color: #444;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 { font-weight: 700}
+body { 
+  max-width: 50em; 
+  margin: 0 auto; 
+  padding: 1em;
+  line-height: 1.5em;
+}
+
+body > header { text-align: center; }
+
+/* Menu */
+
+h1.logo {
+  border-bottom: 1px solid #f2f2f2;
+}
+h1.logo a {
+  text-decoration: none;
+  color: #444;
+}
+
+header nav{
+/*
+  border:1px solid #ccc;
+  border-width:1px 0;
+*/
+  list-style:none;
+  margin:0 0 5em 0;
+  padding:0;
+  text-align:center;
+}
+header nav ul {
+  padding: 0;
+}
+header nav li{
+  display:inline;
+}
+header nav a{
+  display: inline-block;
+  padding: 10px;
+  color: #444;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.latest_blog_posts li {
+  margin-bottom: .5em;
+}
+
+.load_comments {
+  cursor: pointer;
+}
+
+.latest_blog_posts {
+  padding-bottom: 2em;
+}
+
+.latest_blog_posts h2 {
+  padding-bottom: 1em;
+}
+
+.digital_footprint h2 {
+  padding-bottom: 1em;
+}
+
+#comments {
+  margin-top: 4em;
+}
+
+nav.article {
+  margin-top: 4em;
+}
+
+article > header {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+article > section > h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+footer {
+  margin-top: 5em;
+  text-align:center;
+  border-top: 1px solid #f2f2f2;
+}
+
+/* Table */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ededed;
+  color: #757575;
+  line-height: 1.5;
+  width: 100%;
+  margin: 2em 0;
+  font-size: 90%;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+  border-top: 1px solid #ededed;
+  padding: 6px 16px;
+}
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #636363;
+}
+
+/* Responsive videos, from http://embedresponsively.com/ */
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* monokai sublime highlight.js style*/
+.hljs{display:block;overflow-x:auto;padding:0.5em;background:#23241f;-webkit-text-size-adjust:none}.hljs,.hljs-tag,.css .hljs-rules,.css .hljs-value,.aspectj .hljs-function,.css .hljs-function .hljs-preprocessor,.hljs-pragma{color:#f8f8f2}.hljs-strongemphasis,.hljs-strong,.hljs-emphasis{color:#a8a8a2}.hljs-bullet,.hljs-blockquote,.hljs-horizontal_rule,.hljs-number,.hljs-regexp,.alias .hljs-keyword,.hljs-literal,.hljs-hexcolor{color:#ae81ff}.hljs-tag .hljs-value,.hljs-code,.hljs-title,.css .hljs-class,.hljs-class .hljs-title:last-child{color:#a6e22e}.hljs-link_url{font-size:80%}.hljs-strong,.hljs-strongemphasis{font-weight:bold}.hljs-emphasis,.hljs-strongemphasis,.hljs-class .hljs-title:last-child,.hljs-typename{font-style:italic}.hljs-keyword,.ruby .hljs-class .hljs-keyword:first-child,.ruby .hljs-function .hljs-keyword,.hljs-function,.hljs-change,.hljs-winutils,.hljs-flow,.nginx .hljs-title,.tex .hljs-special,.hljs-header,.hljs-attribute,.hljs-symbol,.hljs-symbol .hljs-string,.hljs-tag .hljs-title,.hljs-value,.alias .hljs-keyword:first-child,.css .hljs-tag,.css .unit,.css .hljs-important{color:#f92672}.hljs-function .hljs-keyword,.hljs-class .hljs-keyword:first-child,.hljs-aspect .hljs-keyword:first-child,.hljs-constant,.hljs-typename,.css .hljs-attribute{color:#66d9ef}.hljs-variable,.hljs-params,.hljs-class .hljs-title,.hljs-aspect .hljs-title{color:#f8f8f2}.hljs-string,.css .hljs-id,.hljs-subst,.hljs-type,.ruby .hljs-class .hljs-parent,.hljs-built_in,.django .hljs-template_tag,.django .hljs-variable,.smalltalk .hljs-class,.django .hljs-filter .hljs-argument,.smalltalk .hljs-localvars,.smalltalk .hljs-array,.hljs-attr_selector,.hljs-pseudo,.hljs-addition,.hljs-stream,.hljs-envvar,.apache .hljs-tag,.apache .hljs-cbracket,.tex .hljs-command,.hljs-prompt,.hljs-link_label,.hljs-link_url{color:#e6db74}.hljs-comment,.hljs-javadoc,.hljs-annotation,.hljs-decorator,.hljs-pi,.hljs-doctype,.hljs-deletion,.hljs-shebang,.apache .hljs-sqbracket,.tex .hljs-formula{color:#75715e}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata,.xml .php,.php .xml{opacity:0.5}
