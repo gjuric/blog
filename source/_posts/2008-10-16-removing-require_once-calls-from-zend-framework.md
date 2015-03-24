@@ -1,15 +1,8 @@
 ---
-title: Removing require_once() calls from Zend Framework
+title: 'Removing require_once() calls from Zend Framework'
 author: Goran Jurić
 layout: post
-categories:
-  - Linux
-  - Optimization
-  - PHP
-  - Zend Framework
-tags:
-  - performance
-  - Zend Framework
+highlight: true
 ---
 If you are using Zend\_Loader to load your classes in Zend Framework, there is no need for all the require\_once() calls that are littered all over ZF files.
 
@@ -33,10 +26,12 @@ xargs -0 sed --regexp-extended --in-place 's/(require_once)/\/\/ \1/g'</span></p
 
 Thanks to Tom Anderson for noticing that this does not work since ZF 1.10.8 , the new script for stripping require_once calls is:
 
-<pre>% cd path/to/ZendFramework/library
+~~~bash
+% cd path/to/ZendFramework/library
 % find . -name '*.php' -not -wholename '*/Loader/Autoloader.php' \
 -not -wholename '*/Application.php' -print0 | \
-xargs -0 sed --regexp-extended --in-place 's/(require_once)/\/\/ \1/g'</pre>
+xargs -0 sed --regexp-extended --in-place 's/(require_once)/\/\/ \1/g'
+~~~
 
 Note that you must use autoloading if you strip the require_once from the ZF project.
 

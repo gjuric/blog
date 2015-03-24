@@ -1,5 +1,5 @@
 ---
-title: '&#8220;Benchmarking&#8221; PHP frameworks'
+title: '"Benchmarking" PHP frameworks'
 author: Goran Jurić
 layout: post
 categories:

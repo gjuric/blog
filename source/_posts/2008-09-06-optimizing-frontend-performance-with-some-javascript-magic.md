@@ -12,6 +12,7 @@ tags:
   - openx
   - optimize
   - performance
+highlight: true
 ---
 So, you know Yahoo!&#8217;s [Best Practices for Speeding Up Your Web Site][1] by hart and you have already implemented most of the tips on your web site but you are still not satisfied with the performance bottlenecks caused by your banner serving services ([OpenX][2], formerly known as OpenAds and PhpAdsNew in my case) and other stuff you need to use but have no control over it.
 
@@ -33,7 +34,8 @@ So, here it goes:
 2.  Put the invocation code into a separate file, let&#8217;s call it **bannerInvocation.html**
 3.  Create an empty div with an ID (ID&#8217;s need to be unique on the page, but you already knew that) in your HTML that is going to be used as a banner placeholder until we fetch the banner. You can style it, and use a preloader GIF as a background if you like.
 4.  Just before the closing </body> tag insert something like this: 
-~~~javascript
+
+~~~html
 <script type="text/javascript">
 //<![CDATA[
 $(window).bind("load", function() {
