@@ -12,7 +12,7 @@ use:
 
       <ul>
 {% for post in page.pagination.items %}
-        <li>{{ post.date | date("m / Y") }} <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+        <li>{{ post.date | date("M / Y") }} <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
       </ul>
 
