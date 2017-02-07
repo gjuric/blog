@@ -1,0 +1,14 @@
+---
+use: ["posts"]
+permalink: posts.json
+---
+{% spaceless %}
+{% set posts = [] %}
+
+{% for post in data.posts %}
+    {% set p = {'title': post.title|raw, 'link': post.url|raw, 'updated': post.date|date("c"), 'body': post.blocks.content|raw|striptags|replace({"\n": " ", "\r": " ", "\t": " "}) } %}
+    {% set posts = posts|merge([p]) %}
+{% endfor %}
+
+{{ posts|json_encode()|raw }}
+{% endspaceless %}

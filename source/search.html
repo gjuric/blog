@@ -1,0 +1,22 @@
+---
+layout: default
+title: Search
+---
+{% block content %}
+    <main>
+      <form action="/search/" method="GET">
+        <input type="text" id="search" name="query">
+        <input type="submit" value="Search">
+      </form>
+
+      <div id="results">
+        <p id="s">Searching...</p>
+        <ul id="result_list">
+        </ul>
+      </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ theme_path('/js/search.js') }}"></script>
+{% endblock %}
