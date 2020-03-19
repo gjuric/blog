@@ -1,3 +1,4 @@
+/vendor/
 output_dev
 output_prod
 publish.sh
