@@ -1,0 +1,15 @@
+---
+title: Mitigating DDOS attacks with Fail2ban
+author: Goran Jurić
+layout: post
+highlight: false
+categories:
+  - devops
+---
+
+One of the attacks that we suffered more than once is a distributed denial of service by submitting login information. In this case attacker probably didn't want to take the site down but was trying to brute force their way into the system by using readily available username/email and password dumps from the internet.
+
+If you want to check if your account could be compromosied you can check here https://haveibeenpwned.com/
+
+The unfortunate side effect is that calculating hashes during the password check is a cpu intensive task that slows down our servers.
+

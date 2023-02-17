@@ -5,7 +5,7 @@ layout: post
 categories:
   - Uncategorized
 tags:
-  - 301
+  - "301"
   - Google
   - Googlebot
   - redirect
